@@ -1,0 +1,49 @@
+body {
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    color: white;
+}
+
+.parent-div {
+    width: 100%;
+    height: 100%;
+    background-image: url("https://www.faw.co.zw/img/pics/Double-Axles-Bus.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 110%;
+}
+
+form {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 30%;
+    height: 80%;
+    margin-left: 35%;
+    margin-top: 5%;
+    border-radius: 10px;
+    padding-top: 2%;
+}
+
+.mb-3{
+    width: 70%;
+    text-align: right;
+    margin-left: 15%;
+    margin-top: 5%;
+}
+
+.btn{
+    margin-left: 30%;
+    margin-top: 5%;
+}
+
+.text{
+    font-size: 90%;
+    text-align: center;
+    margin-bottom: 8%;
+    margin-top: 5%;
+}
+
+.title{
+    font-size: 120%;
+    text-align: center;
+}
