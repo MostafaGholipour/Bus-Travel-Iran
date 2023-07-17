@@ -39,8 +39,8 @@
     </div>
     <ol class="list-group list-group-numbered">
         <% List<Bus> list = (List<Bus>) request.getSession().getAttribute("name");
-        if (list!=null){
-            for (Bus bus : list) {%>
+            if (list != null) {
+                for (Bus bus : list) {%>
         <li class="list-group-item d-flex justify-content-between align-items-start">
             <div class="ms-2 me-auto">
                 <div class="fw-bold"><%=bus.getTitle()%>
@@ -49,14 +49,23 @@
             </div>
             <span class="badge bg-primary rounded-pill"> <%=bus.getCapacity() - bus.getTicketList().size() %></span>
             <div class="btn-group col-md-2" role="group" aria-label="Basic outlined example">
-                <button type="submit" class="btn btn-outline-primary disabled">Buy</button>
+                <% if ((bus.getCapacity() - bus.getTicketList().size()) > 0 ) { %>
+                <button type="submit" class="btn btn-outline-primary">Buy</button>
+                <% } else { %>
+                <button type="submit" class="btn btn-outline-primary disabled">Completion capacity</button>
+                <% } %>
             </div>
         </li>
 
-    </ol>    </form>
+    </ol>
+    </form>
 
-    <%}}else { %>
-    <h1><p style="text-align: center">Nothing found </p></h1><% } %>
+    <%
+        }
+    } else {
+    %>
+    <h1><p style="text-align: center">Nothing found </p></h1>
+    <% } %>
     <%--  <p><%=request.getParameter("date")%></p>--%>
 </div>
 </body>
