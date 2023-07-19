@@ -25,6 +25,7 @@ public class Bus extends BaseEntity {
     @ManyToOne
     Driver driver;
     String origin;
+    String title;
     String destination;
     LocalDate dateMove;
     LocalTime timeMove;

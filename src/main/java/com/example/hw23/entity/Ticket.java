@@ -18,6 +18,8 @@ import javax.persistence.ManyToOne;
 public class Ticket extends BaseEntity {
     @ManyToOne
     Customer customer;
+    String name;
+    String gender;
     @ManyToOne
     Bus bus;
 

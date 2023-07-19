@@ -1,6 +1,9 @@
 package com.example.hw23.entity;
 
 import com.example.hw23.base.entity.Person;
+import com.example.hw23.repository.ticket.TicketRepositoryImpl;
+import com.example.hw23.service.ticket.TicketService;
+import com.example.hw23.service.ticket.TicketServiceImpl;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -27,6 +30,13 @@ public class Customer extends Person {
     @OneToMany(mappedBy = "customer" , cascade = CascadeType.ALL)
     List<Ticket> tickets =new ArrayList<>();
 
+//    public void enterTicket(Bus bus){
+//        Ticket ticket =new Ticket();
+//        ticket.setCustomer(this);
+//        ticket.setBus(bus);
+//        TicketServiceImpl ticketService= new TicketServiceImpl(new TicketRepositoryImpl());
+//        ticketService.save(ticket);
+//    }
     @Override
     public String toString() {
         return "Customer{" +

@@ -18,7 +18,7 @@ public class CustomerRepositoryImpl extends BaseRepositoryImpl<Customer> impleme
         EntityManager entityManager = Hibernate.getEntityManager();
         EntityTransaction transaction = entityManager.getTransaction();
         transaction.begin();
-        String jql = "SELECT m from Customer m where m.username=:S";
+        String jql = "SELECT m from Customer m where m.username=:S ";
         Customer customer = null;
         customer = entityManager.createQuery(jql, Customer.class).setParameter("S", username).getSingleResult();
         return customer;

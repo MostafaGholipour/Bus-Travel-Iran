@@ -1,9 +1,7 @@
 package com.example.hw23.controller;
-
 import com.example.hw23.entity.Customer;
 import com.example.hw23.repository.customer.CustomerRepositoryImpl;
 import com.example.hw23.service.customer.CustomerServiceImpl;
-import com.sun.deploy.nativesandbox.comm.Response;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -24,10 +22,14 @@ public class LoginServlet extends HttpServlet {
         if(login==null){
             PrintWriter out = resp.getWriter();
             out.println("<html><body>");
-            out.println("<h1>" +" NOT Found " + "</h1>");
+            out.println("<h1>" +" NOT " + "</h1>");
             out.println("</body></html>");
         }else {
-            resp.sendRedirect("http://localhost:63342/HW23/src/main/webapp/Search.html?_ijt=vmmb0m29bajmgdhi3ps3u2ls29&_ij_reload=RELOAD_ON_SAVE");
+//            String s= String.valueOf(login.getId());
+//            req.setAttribute("customerId","ssssss");
+            req.getSession().setAttribute("customerId",login.getId());
+            req.getRequestDispatcher("Search.jsp").forward(req,resp);
+//            resp.sendRedirect("Search.jsp");
         }
     }
 }

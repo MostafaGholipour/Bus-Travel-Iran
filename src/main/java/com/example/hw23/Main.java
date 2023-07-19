@@ -15,6 +15,8 @@ import com.example.hw23.service.ticket.TicketService;
 import com.example.hw23.service.ticket.TicketServiceImpl;
 import com.example.hw23.util.Application;
 
+import java.time.LocalDate;
+
 public class Main {
     public static void main(String[] args) {
         BusServiceImpl busService = new BusServiceImpl(new BusRepositoryImpl());
@@ -50,15 +52,16 @@ public class Main {
 //        busService.save(bus);
 
 //        System.out.println(customerService.loadById(2L));
-        System.out.println(customerService.Login("12","1"));
-
-
-
-
-
-
-
-
+        LocalDate localDate = LocalDate.of(2023,07,07);
+        System.out.println(busService.SearchBus("Tehran", "Tabriz",localDate));
+        Customer customer = customerService.loadById(1L);
+        Bus bus = busService.loadById(1L);
+        Ticket ticket= new Ticket();
+        ticket.setName("Zahra");
+        ticket.setGender("12");
+        ticket.setCustomer(customer);
+        ticket.setBus(bus);
+        ticketService.save(ticket);
 
 
     }

@@ -34,34 +34,46 @@
                 <div class="col-sm-5 col-md-1 text-center" dir="auto"><--Go To</div>
                 <div class="col-sm-5 offset-sm-2 col-md-2 bg-white text-dark rounded-pill text-center"><%=request.getParameter("destination")%>
                 </div>
+                <div class="col-sm-5 col-md-1 text-center" dir="auto">: Move</div>
+                <div class="col-sm-5 offset-sm-2 col-md-2 bg-white text-dark rounded-pill text-center"><%=request.getParameter("date")%>
+                </div>
             </div>
         </div>
     </div>
+    <input type="hidden" name="customerId" value="<%=request.getSession().getAttribute("customerId")%>">
     <ol class="list-group list-group-numbered">
         <% List<Bus> list = (List<Bus>) request.getSession().getAttribute("name");
             if (list != null) {
                 for (Bus bus : list) {%>
-        <li class="list-group-item d-flex justify-content-between align-items-start">
-            <div class="ms-2 me-auto">
-                <div class="fw-bold"><%=bus.getTitle()%>
+        <form method="post" action="Ticket">
+            <input type="hidden" name="busId" value="<%=bus.getId()%>">
+            <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                    <div class="fw-bold"><%=bus.getTitle()%>
+                    </div>
+                    Time Move : <%=bus.getTimeMove()%>
                 </div>
-                Time Move : <%=bus.getTimeMove()%>
-            </div>
-            <span class="badge bg-primary rounded-pill"> <%=bus.getCapacity() - bus.getTicketList().size() %></span>
-            <div class="btn-group col-md-2" role="group" aria-label="Basic outlined example">
-                <% if ((bus.getCapacity() - bus.getTicketList().size()) > 0 ) { %>
-                <button type="submit" class="btn btn-outline-primary">Buy</button>
-                <% } else { %>
-                <button type="submit" class="btn btn-outline-primary disabled">Completion capacity</button>
-                <% } %>
-            </div>
-        </li>
-
+                <div class="ms-2 me-auto">
+                    <div class="fw-bold">Travel ID
+                        <%=bus.getId()%>
+                    </div>
+                </div>
+                    <span class="badge bg-primary rounded-pill"> <%=bus.getCapacity() - bus.getTicketList().size() %></span>
+                    <div class="btn-group col-md-2" role="group" aria-label="Basic outlined example">
+                        <% if ((bus.getCapacity() - bus.getTicketList().size()) > 0) {
+                        %>
+                        <input type="hidden" name="customerId" value="<%=request.getSession().getAttribute("customerId")%>">
+                        <button type="submit" class="btn btn-outline-primary">Buy</button>
+                        <% } else { %>
+                        <button type="submit" class="btn btn-outline-primary disabled">Completion capacity</button>
+                        <% } %>
+                    </div>
+            </li>
+        </form>
+        <% } %>
     </ol>
-    </form>
 
     <%
-        }
     } else {
     %>
     <h1><p style="text-align: center">Nothing found </p></h1>
