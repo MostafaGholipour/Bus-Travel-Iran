@@ -5,6 +5,7 @@ import com.example.hw23.service.customer.CustomerServiceImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -29,6 +30,10 @@ public class LoginServlet extends HttpServlet {
 //            req.setAttribute("customerId","ssssss");
             req.getSession().setAttribute("customerId",login.getId());
             req.getRequestDispatcher("Search.jsp").forward(req,resp);
+            Cookie user1 =new Cookie("user",user);
+            resp.addCookie(user1);
+            Cookie pass1 =new Cookie("pass",pass);
+            resp.addCookie(pass1);
 //            resp.sendRedirect("Search.jsp");
         }
     }

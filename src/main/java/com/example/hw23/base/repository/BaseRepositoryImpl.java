@@ -7,10 +7,12 @@ import com.example.hw23.util.Hibernate;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
+import javax.transaction.Transaction;
 import java.util.List;
 
 public abstract class BaseRepositoryImpl<E extends BaseEntity> implements BaseRepository<E>{
 public abstract Class getClassName();
+    EntityManager entityManager = Hibernate.getEntityManager();
     @Override
     public void save(E entity) {
         EntityTransaction transaction = null;
@@ -41,29 +43,27 @@ public abstract Class getClassName();
     }*/
 
     @Override
-    public void deleteById(long id) {
-        E x = loadById(id);
-        EntityTransaction transaction = null;
+    public void delete(E t) {
+        EntityTransaction transaction = entityManager.getTransaction();
+        transaction.begin();
+        entityManager.remove(t);
+        transaction.commit();
+//        entityManager.remove(t.getId());
+    }
+
+    @Override
+    public void deleteById(long id){
         try {
-            EntityManager entityManager = Hibernate.getEntityManager();
-            transaction = entityManager.getTransaction();
-            transaction.begin();
-            entityManager.remove(x);
-            //entityManager.createQuery("delete from"+getClassName().getSimpleName()+" where id="+"'"+id+"'").executeUpdate();
-            //entityManager.createQuery("delete from "+getClassName().getSimpleName()+" where id=:x").setParameter("x",entity.getId()).executeUpdate();
-            transaction.commit();
+            this.delete(loadById(id));
         } catch (Exception e) {
-            transaction.rollback();
+            e.printStackTrace();
         }
     }
 
     @Override
     public E loadById(long id) {
         EntityManager entityManager= Hibernate.getEntityManager();
-        EntityTransaction transaction=entityManager.getTransaction();
-        transaction.begin();
         E e=(E)entityManager.find(getClassName(),id);
-        transaction.commit();
         return e;
     }
 

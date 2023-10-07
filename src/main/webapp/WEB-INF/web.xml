@@ -23,11 +23,16 @@
         <servlet-name>Buy</servlet-name>
         <servlet-class>com.example.hw23.controller.BuyServlet</servlet-class>
     </servlet>
-    MyTicketServlet
     <servlet>
         <servlet-name>MyTicketServlet</servlet-name>
         <servlet-class>com.example.hw23.controller.MyTicketServlet</servlet-class>
     </servlet>
+
+    <servlet>
+        <servlet-name>ShowTicket</servlet-name>
+        <servlet-class>com.example.hw23.controller.ShowTicket</servlet-class>
+    </servlet>
+
 
 
 
@@ -55,5 +60,10 @@
         <servlet-name>MyTicketServlet</servlet-name>
         <url-pattern>/MyTicketServlet</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ShowTicket</servlet-name>
+        <url-pattern>/ShowTicket</url-pattern>
+    </servlet-mapping>
+
 
 </web-app>

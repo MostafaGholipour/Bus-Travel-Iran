@@ -24,16 +24,10 @@
 <div class="body"></div>
 <div class="grad"></div>
 <div class="parent-div">
-<form method="post" action="MyTicketServlet" style="width: 100%; height: 8%; margin-left: 0% ; margin-top: 0%;" dir="ltr">
-    <button type="submit" class="btn btn-warning" style="width: 10%; margin-top: 0%; margin-left: 0%">MY tickets</button>
+<form class="form" method="post" action="MyTicketServlet" style="width: 100%; height: 8%; margin-left: 0% ; margin-top: 0%;" dir="ltr">
+    <button type="submit" class="btn btn-warning" style="width: 10%; margin-top: 20%; margin-left: 0%">MY tickets</button>
     <div> <input type="hidden" name="customerId" value="<%=request.getSession().getAttribute("customerId")%>"></div>
 </form>
-
-
-
-
-
-
     <form class="form" name="form" action="BusResult" method="post" onsubmit="return validateForm()">
         <input type="hidden" name="customerId" value="<%=request.getSession().getAttribute("customerId")%>">
         <p class="title">Buy tickets online</p>

@@ -22,7 +22,7 @@
 <div class="body"></div>
 <div class="grad"></div>
 <div class="parent-div">
-    <form name="form" action="register" method="post" onsubmit="return validateForm()">
+    <form class="form" name="form" action="register" method="post" onsubmit="return validateForm()">
         <div class="mb-3 my-3">
             <label for="InputFrom" class="form-label">Name :</label>
             <!--            <input  class="form-control" id="InputFrom" dir="rtl">-->

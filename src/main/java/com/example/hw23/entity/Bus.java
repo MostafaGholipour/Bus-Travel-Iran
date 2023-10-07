@@ -22,7 +22,7 @@ import java.util.List;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class Bus extends BaseEntity {
     int Capacity;
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     Driver driver;
     String origin;
     String title;

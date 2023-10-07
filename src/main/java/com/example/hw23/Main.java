@@ -14,7 +14,10 @@ import com.example.hw23.service.driver.DriverServiceImpl;
 import com.example.hw23.service.ticket.TicketService;
 import com.example.hw23.service.ticket.TicketServiceImpl;
 import com.example.hw23.util.Application;
+import com.example.hw23.util.Hibernate;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityTransaction;
 import java.time.LocalDate;
 
 public class Main {
@@ -52,17 +55,37 @@ public class Main {
 //        busService.save(bus);
 
 //        System.out.println(customerService.loadById(2L));
-        LocalDate localDate = LocalDate.of(2023,07,07);
-        System.out.println(busService.SearchBus("Tehran", "Tabriz",localDate));
-        Customer customer = customerService.loadById(1L);
-        Bus bus = busService.loadById(1L);
-        Ticket ticket= new Ticket();
-        ticket.setName("Zahra");
-        ticket.setGender("12");
-        ticket.setCustomer(customer);
-        ticket.setBus(bus);
-        ticketService.save(ticket);
+//        LocalDate localDate = LocalDate.of(2023,07,07);
+//        System.out.println(busService.SearchBus("Tehran", "Tabriz",localDate));
+//        Customer customer = customerService.loadById(1L);
+//        Bus bus = busService.loadById(1L);
+//        Ticket ticket= new Ticket();
+//        ticket.setName("Zahra");
+//        ticket.setGender("12");
+//        ticket.setCustomer(customer);
+//        ticket.setBus(bus);
+//        ticketService.save(ticket);
+//        System.out.println(busService.loadById(customerService.loadById(1L).getTickets().get(1).getBus().getId()).getDateMove());
+//        System.out.println(busService.loadById(2L));
 
+//            Bus bus = busService.loadById(2L);
+//            EntityManager entityManager= Hibernate.getEntityManager();
+////            entityManager.remove(bus);
+//        Ticket ticket = ticketService.loadById(1L);
+//        ticketService.delete(ticket);
+
+
+
+//        EntityManager entityManager= Hibernate.getEntityManager();
+//        EntityTransaction transaction = entityManager.getTransaction();
+//        transaction.begin();
+//        entityManager.createQuery("delete from Ticket where id=:x").setParameter("x",1L).executeUpdate();
+//        transaction.commit();
+
+        EntityManager entityManager = Hibernate.getEntityManager();
+        Bus bus = busService.loadById(3L);
+        entityManager.remove(new Bus());
+//        busService.delete(bus);
 
     }
 }
