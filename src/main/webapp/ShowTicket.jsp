@@ -1,6 +1,6 @@
-<%@ page import="com.example.hw23.entity.Customer" %>
-<%@ page import="com.example.hw23.entity.Ticket" %>
-<%@ page import="com.example.hw23.entity.Bus" %><%--
+<%@ page import="com.example.BusTravelIran.entity.Customer" %>
+<%@ page import="com.example.BusTravelIran.entity.Ticket" %>
+<%@ page import="com.example.BusTravelIran.entity.Bus" %><%--
   Created by IntelliJ IDEA.
   User: MORTEZA
   Date: 7/17/2023

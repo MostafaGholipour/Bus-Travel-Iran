@@ -1,5 +1,5 @@
 <%@ page import="java.util.List" %>
-<%@ page import="com.example.hw23.entity.Bus" %>
+<%@ page import="com.example.BusTravelIran.entity.Bus" %>
 <%@ page import="java.io.PrintWriter" %><%--
   Created by IntelliJ IDEA.
   User: MORTEZA

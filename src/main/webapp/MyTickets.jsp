@@ -1,10 +1,10 @@
 <%@ page import="java.util.List" %>
-<%@ page import="com.example.hw23.entity.Bus" %>
+<%@ page import="com.example.BusTravelIran.entity.Bus" %>
 <%@ page import="java.io.PrintWriter" %>
-<%@ page import="com.example.hw23.entity.Ticket" %>
-<%@ page import="com.example.hw23.service.bus.BusService" %>
-<%@ page import="com.example.hw23.service.bus.BusServiceImpl" %>
-<%@ page import="com.example.hw23.repository.bus.BusRepositoryImpl" %><%--
+<%@ page import="com.example.BusTravelIran.entity.Ticket" %>
+<%@ page import="com.example.BusTravelIran.service.bus.BusService" %>
+<%@ page import="com.example.BusTravelIran.service.bus.BusServiceImpl" %>
+<%@ page import="com.example.BusTravelIran.repository.bus.BusRepositoryImpl" %><%--
   Created by IntelliJ IDEA.
   User: MORTEZA
   Date: 7/16/2023

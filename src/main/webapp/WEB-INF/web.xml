@@ -5,32 +5,32 @@
          version="4.0">
     <servlet>
         <servlet-name>Login</servlet-name>
-        <servlet-class>com.example.hw23.controller.LoginServlet</servlet-class>
+        <servlet-class>com.example.BusTravelIran.controller.LoginServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>Register</servlet-name>
-        <servlet-class>com.example.hw23.controller.RegisterServlet</servlet-class>
+        <servlet-class>com.example.BusTravelIran.controller.RegisterServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>BusResult</servlet-name>
-        <servlet-class>com.example.hw23.controller.BusServlet</servlet-class>
+        <servlet-class>com.example.BusTravelIran.controller.BusServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>Ticket</servlet-name>
-        <servlet-class>com.example.hw23.controller.TicketServlet</servlet-class>
+        <servlet-class>com.example.BusTravelIran.controller.TicketServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>Buy</servlet-name>
-        <servlet-class>com.example.hw23.controller.BuyServlet</servlet-class>
+        <servlet-class>com.example.BusTravelIran.controller.BuyServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>MyTicketServlet</servlet-name>
-        <servlet-class>com.example.hw23.controller.MyTicketServlet</servlet-class>
+        <servlet-class>com.example.BusTravelIran.controller.MyTicketServlet</servlet-class>
     </servlet>
 
     <servlet>
         <servlet-name>ShowTicket</servlet-name>
-        <servlet-class>com.example.hw23.controller.ShowTicket</servlet-class>
+        <servlet-class>com.example.BusTravelIran.controller.ShowTicket</servlet-class>
     </servlet>
 
 
